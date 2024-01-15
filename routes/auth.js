@@ -17,14 +17,14 @@ router.get("/error", (req, res) => {
 
 router.get("/logout", (req, res) => {
     req.logout();
-    res.redirect("https://google-front.vercel.app/")
+    res.redirect("http://localhost:3000/")
 })
 
 router.get("/google", passport.authenticate("google", { scope:["profile"]}))
 
 router.get("/google/redirect", passport.authenticate("google",{
-    successRedirect:"https://google-front.vercel.app/usuario",
-    failureRedirect:"https://google-back.vercel.app/auth/error"
+    successRedirect:"http://localhost:3000/usuario",
+    failureRedirect:"/error"
 }))
 
 module.exports = router
