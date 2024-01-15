@@ -22,7 +22,7 @@ router.get("/logout", (req, res) => {
 
 router.get("/google", passport.authenticate("google", { scope:["profile"]}))
 
-router.get("/google/callback", passport.authenticate("google",{
+router.get("/google/redirect", passport.authenticate("google",{
     successRedirect:"https://google-front.vercel.app/usuario",
     failureRedirect:"https://google-back.vercel.app/auth/error"
 }))
