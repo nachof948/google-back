@@ -24,6 +24,10 @@ app.use(
     credentials: true
 }))
 
+app.get('/', (req, res) => {
+    res.send("Bienvenido a la autenticacion con Google")
+})
+
 app.use("/auth", authRoute)
 
 const iniciar = async ()=>{
